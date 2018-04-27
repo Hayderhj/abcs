@@ -1,0 +1,9 @@
+.grid {
+  border: 1px solid black;
+  min-height: 1000px;
+  padding: 0;
+  position: relative;
+  width: 100%; }
+
+li {
+  list-style-type: none; }
