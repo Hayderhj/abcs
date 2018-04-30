@@ -19,8 +19,13 @@ const notes = (state = defaultState, { type, payload }) => {
 }
 
 const moveNote = (state, { id, left, top }) => {
-  const notes = state.map((note) => (note.id !== id ? note : { ...note, top, left }))
-  return notes
+  const note = { ...state.find((note) => note.id === id), top, left }
+  const noteIndex = state.findIndex((note) => note.id === id)
+  const stateCopy = [...state]
+
+  stateCopy.splice(noteIndex, 1)
+
+  return [...stateCopy, note]
 }
 
 export default notes
